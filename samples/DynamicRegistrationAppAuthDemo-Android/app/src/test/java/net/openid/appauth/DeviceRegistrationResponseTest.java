@@ -22,8 +22,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Unit tests for {@link DeviceRegistrationResponse}
  */
 @RunWith(RobolectricTestRunner.class)
-@Config(constants = com.vmware.idm.samples.appauth.BuildConfig.class, sdk = 16)
-public class DeviceRegistrationResponseTest extends VMwareAppAuthTest {
+@Config(constants = com.omnissa.idm.samples.appauth.BuildConfig.class, sdk = 16)
+public class DeviceRegistrationResponseTest extends OmnissaAppAuthTest {
 
     private static final String TEST_JSON = "{\n"
             + " \"code\": \"" + TEST_AUTHORIZATION_CODE + "\",\n"

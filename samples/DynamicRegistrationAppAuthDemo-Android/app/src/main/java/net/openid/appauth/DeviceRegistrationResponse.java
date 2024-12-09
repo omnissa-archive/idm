@@ -37,7 +37,7 @@ public class DeviceRegistrationResponse {
      * The extra string used to store a {@link DeviceRegistrationResponse} in an intent by
      * {@link #toIntent()}.
      */
-    public static final String EXTRA_RESPONSE = "com.vmware.idm.DeviceRegistrationResponse";
+    public static final String EXTRA_RESPONSE = "com.omnissa.idm.DeviceRegistrationResponse";
 
     static final String KEY_REQUEST = "request";
 

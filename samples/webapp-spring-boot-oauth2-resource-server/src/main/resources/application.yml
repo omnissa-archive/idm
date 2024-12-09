@@ -1,11 +1,11 @@
-vmware:
+omnissa:
   resource:
-    userInfoUri: https://dev.vmwareidentity.asia/SAAS/jersey/manager/api/userinfo
-    checkTokenUri: https://dev.vmwareidentity.asia/SAAS/API/1.0/REST/auth/token?attribute=isValid
+    userInfoUri: https://dev.omnissaidentity.asia/SAAS/jersey/manager/api/userinfo
+    checkTokenUri: https://dev.omnissaidentity.asia/SAAS/API/1.0/REST/auth/token?attribute=isValid
     localValidation: true
-    id: https://dev.vmwareidentity.asia/SAAS/auth/oauthtoken
+    id: https://dev.omnissaidentity.asia/SAAS/auth/oauthtoken
     jwt:
-      keyUri: https://dev.vmwareidentity.asia/SAAS/API/1.0/REST/auth/token?attribute=publicKey
+      keyUri: https://dev.omnissaidentity.asia/SAAS/API/1.0/REST/auth/token?attribute=publicKey
 
 logging:
   level:

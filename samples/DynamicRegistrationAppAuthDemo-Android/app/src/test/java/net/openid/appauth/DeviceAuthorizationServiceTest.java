@@ -37,12 +37,12 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 /**
- * Tests of the calls to perform VMware Identity Manager mobile dynamic registration.
+ * Tests of the calls to perform Omnissa Identity Manager mobile dynamic registration.
  * Based on @{link AuthorizationServiceTest}.
  */
 @RunWith(RobolectricGradleTestRunner.class)
-@Config(constants = com.vmware.idm.samples.appauth.BuildConfig.class, sdk = 16, manifest = "src/main/AndroidManifest.xml")
-public class DeviceAuthorizationServiceTest extends VMwareAppAuthTest {
+@Config(constants = com.omnissa.idm.samples.appauth.BuildConfig.class, sdk = 16, manifest = "src/main/AndroidManifest.xml")
+public class DeviceAuthorizationServiceTest extends OmnissaAppAuthTest {
 
     private static final int CALLBACK_TIMEOUT_MILLIS = 1000;
     private static final String TEST_BROWSER_PACKAGE = "com.browser.test";

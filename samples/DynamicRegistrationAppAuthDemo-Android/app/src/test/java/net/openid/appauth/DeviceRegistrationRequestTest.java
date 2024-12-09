@@ -15,11 +15,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 
 /**
- * Unit tests for the device registration request against VMware Identity Manager.
+ * Unit tests for the device registration request against Omnissa Identity Manager.
  */
 @RunWith(RobolectricTestRunner.class)
-@Config(constants = com.vmware.idm.samples.appauth.BuildConfig.class, sdk = 16)
-public class DeviceRegistrationRequestTest extends VMwareAppAuthTest {
+@Config(constants = com.omnissa.idm.samples.appauth.BuildConfig.class, sdk = 16)
+public class DeviceRegistrationRequestTest extends OmnissaAppAuthTest {
 
 
     private static final String TEST_JSON = "{\n"

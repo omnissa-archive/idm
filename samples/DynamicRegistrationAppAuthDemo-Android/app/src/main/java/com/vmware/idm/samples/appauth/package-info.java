@@ -13,6 +13,6 @@
  */
 
 /**
- * App which demonstrates the use of the AppAuth library to authenticate a VMware Identity Manager account.
+ * App which demonstrates the use of the AppAuth library to authenticate a Omnissa Identity Manager account.
  */
-package com.vmware.idm.samples.appauth;
+package com.omnissa.idm.samples.appauth;

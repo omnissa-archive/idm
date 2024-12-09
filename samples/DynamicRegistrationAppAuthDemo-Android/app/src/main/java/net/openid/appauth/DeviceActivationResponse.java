@@ -25,7 +25,7 @@ import static net.openid.appauth.Preconditions.checkNotNull;
 
 /**
  * The response of the device activation request.
- * VMware Identity Manager service will exchange the activation code with a unique pair of
+ * Omnissa Identity Manager service will exchange the activation code with a unique pair of
  * (client id, client secret) for this device.
  *
  * @see {DeviceActivationRequest}

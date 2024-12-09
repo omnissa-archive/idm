@@ -1,14 +1,14 @@
 {
   "info": {
-    "title": "VMware Identity Manager",
+    "title": "Omnissa Identity Manager",
     "version": "Build ede7619a82a790498f4ecca11a28bdfd547e64b8",
-    "description": "VMware Identity Manager REST API documentation.",
+    "description": "Omnissa Identity Manager REST API documentation.",
     "license": {
-      "url": "http://www.vmware.com/download/eula/identity-manager-terms-of-service.html",
-      "name": "VMware Identity Manager Terms of Service"
+      "url": "http://www.omnissa.com/download/eula/identity-manager-terms-of-service.html",
+      "name": "Omnissa Identity Manager Terms of Service"
     },
     "contact": {
-      "url": "http://www.vmware.com/company/contact_sales.html"
+      "url": "http://www.omnissa.com/company/contact_sales.html"
     }
   },
   "paths": {
@@ -53,7 +53,7 @@
             "description": "the user resource to be created as a JSON string",
             "required": true,
             "x-examples": {
-              "default": "{\n    \"schemas\": [\n        \"urn:scim:schemas:core:1.0\"\n        ],\n    \"userName\": \"test-user-10\",\n    \"name\": {\n        \"givenName\": \"firstName 10\",\n        \"familyName\": \"lastName 10\"\n    },\n    \"emails\": [\n        {\n            \"value\": \"test10@vmware.com\"\n        }\n    ],\n    \"password\": \"123456\"\n }"
+              "default": "{\n    \"schemas\": [\n        \"urn:scim:schemas:core:1.0\"\n        ],\n    \"userName\": \"test-user-10\",\n    \"name\": {\n        \"givenName\": \"firstName 10\",\n        \"familyName\": \"lastName 10\"\n    },\n    \"emails\": [\n        {\n            \"value\": \"test10@omnissa.com\"\n        }\n    ],\n    \"password\": \"123456\"\n }"
             },
             "name": "body",
             "in": "body",
@@ -325,7 +325,7 @@
           }
         ],
         "produces": [
-          "application/vnd.vmware.horizon.manager.reports.table+json"
+          "application/vnd.omnissa.horizon.manager.reports.table+json"
         ],
         "tags": [
           "reports",
@@ -358,7 +358,7 @@
         ],
         "description": "",
         "produces": [
-          "application/vnd.vmware.horizon.manager.reports.table+json"
+          "application/vnd.omnissa.horizon.manager.reports.table+json"
         ],
         "summary": "Get a summary report of the number of users, groups, resources and devices.",
         "security": [
@@ -402,7 +402,7 @@
           }
         ],
         "produces": [
-          "application/vnd.vmware.horizon.manager.reports.table+json"
+          "application/vnd.omnissa.horizon.manager.reports.table+json"
         ],
         "tags": [
           "reports",
@@ -474,7 +474,7 @@
         ],
         "description": "",
         "produces": [
-          "application/vnd.vmware.horizon.manager.reports.table+json"
+          "application/vnd.omnissa.horizon.manager.reports.table+json"
         ],
         "summary": "Get a report that shows the total number of launches per day for each resource type, for the last 7 days.",
         "security": [
@@ -654,10 +654,10 @@
             "description": "The error can be any of those: no client_id has been specified, the client_id does not exist, the redirect_uri has not been specified or does not match. The error message will contain 'error' and 'error_description' fields. See the OAuth2.0 spec for further details."
           }
         },
-        "description": "This is the starting point of the OAuth 2.0 flow to authenticate end users from your application.This authorization endpoint complies with the OAuth 2.0 specifications and must be used by clients to authenticate users and obtain an authorization code. To use this endpoint, your application must be registered as an OAuth 2.0 client in VMware Identity Manager and have the 'authorization_code' grant type enabled.",
+        "description": "This is the starting point of the OAuth 2.0 flow to authenticate end users from your application.This authorization endpoint complies with the OAuth 2.0 specifications and must be used by clients to authenticate users and obtain an authorization code. To use this endpoint, your application must be registered as an OAuth 2.0 client in Omnissa Identity Manager and have the 'authorization_code' grant type enabled.",
         "parameters": [
           {
-            "description": "Specifies the callback endpoint in your application that will receive the authorization code. It must match the redirect_uri defined in your OAuth2.0 client registration in VMware Identity Manager. When sending the redirect_uri as a URL parameter it has to be URL encoded.",
+            "description": "Specifies the callback endpoint in your application that will receive the authorization code. It must match the redirect_uri defined in your OAuth2.0 client registration in Omnissa Identity Manager. When sending the redirect_uri as a URL parameter it has to be URL encoded.",
             "required": true,
             "x-example": "https://example-app.com/redirect?auth%3Doauth",
             "in": "query",
@@ -665,7 +665,7 @@
             "name": "redirect_uri"
           },
           {
-            "description": "This is the identifier of the OAuth 2.0 client that was registered in VMware Identity Manager.",
+            "description": "This is the identifier of the OAuth 2.0 client that was registered in Omnissa Identity Manager.",
             "required": true,
             "x-example": "Example_AppID",
             "in": "query",
@@ -699,14 +699,14 @@
           {
             "required": false,
             "type": "string",
-            "description": "Specifies the user's domain. If this parameter is specified, the login screen will skip the domain selection page. This can be used when it is known that a single domain is used or the domain information can be inferred automatically (from the username for example).This is a VMware Identity Manager optional parameter and is not in the OAuth 2.0 specification. ",
+            "description": "Specifies the user's domain. If this parameter is specified, the login screen will skip the domain selection page. This can be used when it is known that a single domain is used or the domain information can be inferred automatically (from the username for example).This is a Omnissa Identity Manager optional parameter and is not in the OAuth 2.0 specification. ",
             "in": "query",
             "name": "domain"
           },
           {
             "required": false,
             "type": "string",
-            "description": "Specifies the user's login. In case your application already knows what user is going to login, and VMware Identity Manager will have to pass this user to a third-party IdP, then adding this parameter will send the username as part of the SAML request. This is a VMware Identity Manager optional parameter and is not in the OAuth 2.0 specification.",
+            "description": "Specifies the user's login. In case your application already knows what user is going to login, and Omnissa Identity Manager will have to pass this user to a third-party IdP, then adding this parameter will send the username as part of the SAML request. This is a Omnissa Identity Manager optional parameter and is not in the OAuth 2.0 specification.",
             "in": "query",
             "name": "u"
           }
@@ -773,7 +773,7 @@
           }
         ],
         "produces": [
-          "application/vnd.vmware.horizon.manager.reports.table+json"
+          "application/vnd.omnissa.horizon.manager.reports.table+json"
         ],
         "tags": [
           "reports",
@@ -817,7 +817,7 @@
           }
         ],
         "produces": [
-          "application/vnd.vmware.horizon.manager.reports.table+json"
+          "application/vnd.omnissa.horizon.manager.reports.table+json"
         ],
         "tags": [
           "reports",
@@ -861,7 +861,7 @@
           }
         ],
         "produces": [
-          "application/vnd.vmware.horizon.manager.reports.table+json"
+          "application/vnd.omnissa.horizon.manager.reports.table+json"
         ],
         "tags": [
           "reports",
@@ -905,7 +905,7 @@
           }
         ],
         "produces": [
-          "application/vnd.vmware.horizon.manager.reports.table+json"
+          "application/vnd.omnissa.horizon.manager.reports.table+json"
         ],
         "tags": [
           "reports",
@@ -949,7 +949,7 @@
           }
         ],
         "produces": [
-          "application/vnd.vmware.horizon.manager.reports.table+json"
+          "application/vnd.omnissa.horizon.manager.reports.table+json"
         ],
         "tags": [
           "reports",
@@ -987,7 +987,7 @@
           }
         ],
         "produces": [
-          "application/vnd.vmware.horizon.manager.reports.table+json"
+          "application/vnd.omnissa.horizon.manager.reports.table+json"
         ],
         "tags": [
           "reports",
@@ -1011,7 +1011,7 @@
           {
             "required": true,
             "type": "string",
-            "description": "Specifies the OAuth grant type the client is making. VMware Identity Manager supports the following grant types from the OAuth specifications: authorization_code, password, client_credentials, and refresh_token. VMware Identity Manager also supports the grant type urn:ietf:params:oauth:grant-type:jwt-bearer for using JWTs for authorization as described in the JWT Bearer Token Profiles for OAuth 2.0 specifications.",
+            "description": "Specifies the OAuth grant type the client is making. Omnissa Identity Manager supports the following grant types from the OAuth specifications: authorization_code, password, client_credentials, and refresh_token. Omnissa Identity Manager also supports the grant type urn:ietf:params:oauth:grant-type:jwt-bearer for using JWTs for authorization as described in the JWT Bearer Token Profiles for OAuth 2.0 specifications.",
             "in": "query",
             "name": "grant_type"
           },
@@ -1109,7 +1109,7 @@
             }
           }
         },
-        "description": "This endpoint allows applications to validate the access token issued by VMware Identity Manager, and to retrieve the public key used to sign the token.",
+        "description": "This endpoint allows applications to validate the access token issued by Omnissa Identity Manager, and to retrieve the public key used to sign the token.",
         "parameters": [
           {
             "required": true,
@@ -1211,7 +1211,7 @@
             }
           },
           "302": {
-            "description": "VMware Identity Manager will redirect to the specified redirect_uri. The redirect URL will contain 'error' and 'error_description' query parameters if there is an error: the response_type is invalid or missing, the specified scope is unknown. Otherwise the redirect URL will contain the state, the activation code and the authorization code to exchange respectively in the activation and authorization subsequent requests."
+            "description": "Omnissa Identity Manager will redirect to the specified redirect_uri. The redirect URL will contain 'error' and 'error_description' query parameters if there is an error: the response_type is invalid or missing, the specified scope is unknown. Otherwise the redirect URL will contain the state, the activation code and the authorization code to exchange respectively in the activation and authorization subsequent requests."
           },
           "400": {
             "description": "The error can be any of those: the app_product_id does not exist, the user_device is not specified or incorrect, the redirect_uri is not specified or invalid or does not match the one in the app_product_id."
@@ -1220,9 +1220,9 @@
         "description": "This endpoint is the starting point of a mobile device dynamic client registration flow.",
         "parameters": [
           {
-            "description": "Specifies the name of the template that was registered with VMware Identity Manager.",
+            "description": "Specifies the name of the template that was registered with Omnissa Identity Manager.",
             "required": true,
-            "x-example": "VMware-AppAuth-Samples-Template",
+            "x-example": "Omnissa-AppAuth-Samples-Template",
             "in": "query",
             "type": "string",
             "name": "app_product_id"
@@ -1252,9 +1252,9 @@
             "name": "response_type"
           },
           {
-            "description": "Specifies the callback endpoint in your application that will receive the authorization code. It must match the redirect_uri defined in the pre-created template in VMware Identity Manager. When sending the redirect_uri as a URL parameter it has to be URL encoded.",
+            "description": "Specifies the callback endpoint in your application that will receive the authorization code. It must match the redirect_uri defined in the pre-created template in Omnissa Identity Manager. When sending the redirect_uri as a URL parameter it has to be URL encoded.",
             "required": true,
-            "x-example": "com.vmware.idm.samples.mobilesso%3A%2F%2Foauth2redirect",
+            "x-example": "com.omnissa.idm.samples.mobilesso%3A%2F%2Foauth2redirect",
             "in": "query",
             "type": "string",
             "name": "redirect_uri"
@@ -1293,7 +1293,7 @@
             }
           },
           "302": {
-            "description": "VMware Identity Manager will redirect to the specified redirect_uri. The redirect URL will contain 'error' and 'error_description' query parameters if there is an error: the response_type is invalid or missing, the specified scope is unknown. Otherwise the redirect URL will contain the state, the activation code and the authorization code to exchange respectively in the activation and authorization subsequent requests."
+            "description": "Omnissa Identity Manager will redirect to the specified redirect_uri. The redirect URL will contain 'error' and 'error_description' query parameters if there is an error: the response_type is invalid or missing, the specified scope is unknown. Otherwise the redirect URL will contain the state, the activation code and the authorization code to exchange respectively in the activation and authorization subsequent requests."
           },
           "400": {
             "description": "The error can be any of those: the app_product_id does not exist, the user_device is not specified or incorrect, the redirect_uri is not specified or invalid or does not match the one in the app_product_id."
@@ -1302,9 +1302,9 @@
         "description": "This endpoint is the starting point of a mobile device dynamic client registration flow.",
         "parameters": [
           {
-            "description": "Specifies the name of the template that was registered with VMware Identity Manager.",
+            "description": "Specifies the name of the template that was registered with Omnissa Identity Manager.",
             "required": true,
-            "x-example": "VMware-AppAuth-Samples-Template",
+            "x-example": "Omnissa-AppAuth-Samples-Template",
             "in": "query",
             "type": "string",
             "name": "app_product_id"
@@ -1334,9 +1334,9 @@
             "name": "response_type"
           },
           {
-            "description": "Specifies the callback endpoint in your application that will receive the authorization code. It must match the redirect_uri defined in the pre-created template in VMware Identity Manager. When sending the redirect_uri as a URL parameter it has to be URL encoded.",
+            "description": "Specifies the callback endpoint in your application that will receive the authorization code. It must match the redirect_uri defined in the pre-created template in Omnissa Identity Manager. When sending the redirect_uri as a URL parameter it has to be URL encoded.",
             "required": true,
-            "x-example": "com.vmware.idm.samples.mobilesso%3A%2F%2Foauth2redirect",
+            "x-example": "com.omnissa.idm.samples.mobilesso%3A%2F%2Foauth2redirect",
             "in": "query",
             "type": "string",
             "name": "redirect_uri"
@@ -1635,7 +1635,7 @@
           }
         ],
         "produces": [
-          "application/vnd.vmware.horizon.manager.reports.chart+json"
+          "application/vnd.omnissa.horizon.manager.reports.chart+json"
         ],
         "tags": [
           "reports",
@@ -1713,9 +1713,9 @@
             "name": "userId"
           },
           {
-            "description": "Always use application/vnd.vmware.horizon.manager.entitlements.v2.entitlement.list+json which returns VMware Identity Manager user IDs. application/vnd.vmware.horizon.manager.entitlements.entitlement.list+json used to return external user IDs and is now deprecated.",
+            "description": "Always use application/vnd.omnissa.horizon.manager.entitlements.v2.entitlement.list+json which returns Omnissa Identity Manager user IDs. application/vnd.omnissa.horizon.manager.entitlements.entitlement.list+json used to return external user IDs and is now deprecated.",
             "required": true,
-            "x-example": "application/vnd.vmware.horizon.manager.entitlements.v2.entitlement.list+json",
+            "x-example": "application/vnd.omnissa.horizon.manager.entitlements.v2.entitlement.list+json",
             "in": "header",
             "type": "string",
             "name": "Accept"
@@ -1734,8 +1734,8 @@
           }
         ],
         "produces": [
-          "application/vnd.vmware.horizon.manager.entitlements.entitlement.list+json",
-          "application/vnd.vmware.horizon.manager.entitlements.v2.entitlement.list+json"
+          "application/vnd.omnissa.horizon.manager.entitlements.entitlement.list+json",
+          "application/vnd.omnissa.horizon.manager.entitlements.v2.entitlement.list+json"
         ],
         "description": "Retrieve entitlements for the authenticated user or for a given user ID<br>",
         "tags": [
@@ -1752,7 +1752,7 @@
           }
         ],
         "consumes": [
-          "application/vnd.vmware.horizon.manager.entitlements.search+json"
+          "application/vnd.omnissa.horizon.manager.entitlements.search+json"
         ],
         "operationId": "post-searchEntitlements"
       }
@@ -1804,7 +1804,7 @@
           }
         ],
         "produces": [
-          "application/vnd.vmware.horizon.manager.reports.table+json"
+          "application/vnd.omnissa.horizon.manager.reports.table+json"
         ],
         "tags": [
           "reports",
@@ -1887,7 +1887,7 @@
           }
         ],
         "produces": [
-          "application/vnd.vmware.horizon.manager.reports.table+json"
+          "application/vnd.omnissa.horizon.manager.reports.table+json"
         ],
         "tags": [
           "reports",
@@ -1921,7 +1921,7 @@
           }
         },
         "produces": [
-          "application/vnd.vmware.horizon.manager.oauth2client+json"
+          "application/vnd.omnissa.horizon.manager.oauth2client+json"
         ],
         "tags": [
           "admin",
@@ -1937,14 +1937,14 @@
         ],
         "operationId": "post-createGenericOAuth2Client",
         "consumes": [
-          "application/vnd.vmware.horizon.manager.oauth2client+json"
+          "application/vnd.omnissa.horizon.manager.oauth2client+json"
         ],
-        "description": "This endpoint is used to define a new OAuth2 Client on VMware Identity Manager. An OAuth2 Client can be a Service Client('client credentials' OAuth2 grant type), or a User Client('authorization_code' or 'password' OAuth2 grant types). This definition will enable a service or its users to authenticate to VMware Identity Manager using the OAuth2 protocol."
+        "description": "This endpoint is used to define a new OAuth2 Client on Omnissa Identity Manager. An OAuth2 Client can be a Service Client('client credentials' OAuth2 grant type), or a User Client('authorization_code' or 'password' OAuth2 grant types). This definition will enable a service or its users to authenticate to Omnissa Identity Manager using the OAuth2 protocol."
       },
       "get": {
-        "description": "This endpoint is used to read the list of OAuth 2.0 clients VMware Identity Manager has registered.",
+        "description": "This endpoint is used to read the list of OAuth 2.0 clients Omnissa Identity Manager has registered.",
         "produces": [
-          "application/vnd.vmware.horizon.manager.oauth2clientsummarylist+json"
+          "application/vnd.omnissa.horizon.manager.oauth2clientsummarylist+json"
         ],
         "tags": [
           "admin",
@@ -2006,7 +2006,7 @@
             "description": "the entitlement definition updated information as a JSON string",
             "required": true,
             "x-examples": {
-              "com.vmware.horizon.entitlement.model.EntitlementDefinitionTO": "{ \"catalogItemId\": \"0e2ec563-c4c3-4b01-8f1d-0513d62e41c2\",\"sujectType\": \"USERS\", \"sujectId\": \"083ed8e6-6a39-461a-b0de-e9800e245900\",\"activationPolicy\": \"USER_ACTIVATED\"}"
+              "com.omnissa.horizon.entitlement.model.EntitlementDefinitionTO": "{ \"catalogItemId\": \"0e2ec563-c4c3-4b01-8f1d-0513d62e41c2\",\"sujectType\": \"USERS\", \"sujectId\": \"083ed8e6-6a39-461a-b0de-e9800e245900\",\"activationPolicy\": \"USER_ACTIVATED\"}"
             },
             "name": "body",
             "in": "body",
@@ -2020,7 +2020,7 @@
           "entitlement definition"
         ],
         "produces": [
-          "application/vnd.vmware.horizon.manager.entitlements.definition+json"
+          "application/vnd.omnissa.horizon.manager.entitlements.definition+json"
         ],
         "summary": "Update an entitlement definition",
         "security": [
@@ -2032,7 +2032,7 @@
         ],
         "operationId": "put-updateEntitlementDefinition",
         "consumes": [
-          "application/vnd.vmware.horizon.manager.entitlements.definition+json"
+          "application/vnd.omnissa.horizon.manager.entitlements.definition+json"
         ],
         "responses": {
           "200": {
@@ -2077,7 +2077,7 @@
             "name": "subjectType"
           },
           {
-            "description": "The ID of the user or group to which the catalog item is entitled. This is usually the VMware Identity Manager UUID and not an external ID.",
+            "description": "The ID of the user or group to which the catalog item is entitled. This is usually the Omnissa Identity Manager UUID and not an external ID.",
             "required": true,
             "x-example": "8dbdc5a6-1fb4-4a17-a25c-6a3744fb40db",
             "in": "path",
@@ -2090,7 +2090,7 @@
           "entitlement definition"
         ],
         "produces": [
-          "application/vnd.vmware.horizon.manager.entitlements.definition+json"
+          "application/vnd.omnissa.horizon.manager.entitlements.definition+json"
         ],
         "summary": "Get entitlement of a given catalog item to a given subject (user/group)",
         "security": [
@@ -2151,7 +2151,7 @@
             "name": "subjectType"
           },
           {
-            "description": "The user or group ID to which the catalog item is entitled. This is the VMware Identity Manager UUID and not an external ID.",
+            "description": "The user or group ID to which the catalog item is entitled. This is the Omnissa Identity Manager UUID and not an external ID.",
             "required": true,
             "x-example": "8dbdc5a6-1fb4-4a17-a25c-6a3744fb40db",
             "in": "path",
@@ -2402,7 +2402,7 @@
           "oauth2"
         ],
         "produces": [
-          "application/vnd.vmware.horizon.manager.oauth2client+json"
+          "application/vnd.omnissa.horizon.manager.oauth2client+json"
         ],
         "summary": "Update an existing OAuth 2.0 client",
         "security": [
@@ -2414,7 +2414,7 @@
         ],
         "operationId": "put-updateOAuth2Client",
         "consumes": [
-          "application/vnd.vmware.horizon.manager.oauth2client+json"
+          "application/vnd.omnissa.horizon.manager.oauth2client+json"
         ],
         "description": "This endpoint is used to update information of an existing client, using a client id. Renaming the client (update client id) is not supported; To rename a client, it needs to be deleted first and then re-created"
       },
@@ -2445,9 +2445,9 @@
           "oauth2"
         ],
         "produces": [
-          "application/vnd.vmware.horizon.manager.oauth2client+json",
-          "application/vnd.vmware.horizon.manager.clientcredentialsoauth2client+json",
-          "application/vnd.vmware.horizon.manager.classicoauth2client+json"
+          "application/vnd.omnissa.horizon.manager.oauth2client+json",
+          "application/vnd.omnissa.horizon.manager.clientcredentialsoauth2client+json",
+          "application/vnd.omnissa.horizon.manager.classicoauth2client+json"
         ],
         "summary": "View an existing OAuth 2.0 client",
         "security": [
@@ -2458,7 +2458,7 @@
           }
         ],
         "operationId": "get-getOAuth2Client",
-        "description": "This endpoint is used to get full details of a registered OAuth 2.0 Client on VMware Identity Manager"
+        "description": "This endpoint is used to get full details of a registered OAuth 2.0 Client on Omnissa Identity Manager"
       },
       "delete": {
         "description": "This endpoint is used to delete an existing client. Once deleted, the client information, its associated suite tokens, activation tokens, authorization codes, access tokens and refresh tokens will be lost. The operation cannot be undone",
@@ -2672,7 +2672,7 @@
         "user": "The user role"
       },
       "tokenUrl": "/SAAS/auth/oauthtoken",
-      "description": "The OAuth2.0 authentication scheme to access all APIs. VMware Identity Manager supports 'Authorization Code', 'Resource Owner Password Credentials' and 'Client Credentials' as defined by the OAuth 2.0 spec.",
+      "description": "The OAuth2.0 authentication scheme to access all APIs. Omnissa Identity Manager supports 'Authorization Code', 'Resource Owner Password Credentials' and 'Client Credentials' as defined by the OAuth 2.0 spec.",
       "flow": "accessCode",
       "type": "oauth2",
       "authorizationUrl": "/SAAS/auth/oauth2/authorize"
@@ -2784,7 +2784,7 @@
           ],
           "type": "string",
           "example": "Saml20",
-          "description": "The specific catalog item type (used for application launch by VMware Identity Manager)"
+          "description": "The specific catalog item type (used for application launch by Omnissa Identity Manager)"
         },
         "visible": {
           "readOnly": true,
@@ -2889,12 +2889,12 @@
           "default": false,
           "type": "boolean",
           "example": false,
-          "description": "When set to true, OAuth2 Client will become undeletable from the VMware Identity Admin UI. Default is 'false'"
+          "description": "When set to true, OAuth2 Client will become undeletable from the Omnissa Identity Admin UI. Default is 'false'"
         },
         "secret": {
           "type": "string",
           "example": "my-auth-grant-client1-secret",
-          "description": "The OAuth 2.0 Client secret (a string provided by an admin or a VMware Identity Manager auto-generated string). If secret string not provided, an auto-generated secret will be returned. Secret field is mandatory in Authorization Code and Client Credentials Grant flows. If the secret field is omitted or left blank in Resource Owner grant flow, no secret will be required to authenticate the client"
+          "description": "The OAuth 2.0 Client secret (a string provided by an admin or a Omnissa Identity Manager auto-generated string). If secret string not provided, an auto-generated secret will be returned. Secret field is mandatory in Authorization Code and Client Credentials Grant flows. If the secret field is omitted or left blank in Resource Owner grant flow, no secret will be required to authenticate the client"
         },
         "refreshTokenTTL": {
           "format": "int32",
@@ -2918,7 +2918,7 @@
         "resourceUuid": {
           "format": "uuid",
           "type": "string",
-          "description": "UUID of a VMware Identity application. Only users who are entitled to this application will be able to authenticate via this client.",
+          "description": "UUID of a Omnissa Identity application. Only users who are entitled to this application will be able to authenticate via this client.",
           "example": "9e70bee8-3a55-4413-8418-454e7278093e"
         },
         "activationToken": {
@@ -3087,7 +3087,7 @@
             "$ref": "#/definitions/EntryString"
           },
           "type": "array",
-          "description": "The list of group parents if available. The groups can be nested and VMware Identity Manager will return the full hierarchy"
+          "description": "The list of group parents if available. The groups can be nested and Omnissa Identity Manager will return the full hierarchy"
         },
         "compositionRulesV2": {
           "type": "boolean",
@@ -3487,7 +3487,7 @@
         "access_token": {
           "type": "string",
           "example": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9xxxxHVcA76zjsGN2w...",
-          "description": "The requested access token. This token can now be used to call VMware Identity Manager APIs. For example, with the 'Bearer' token type, use 'Bearer &lt;this access token value&gt;' as the 'Authorization' header. The access token is a <a href=\"https://jwt.io/\">JSON web token</a> (JWT)."
+          "description": "The requested access token. This token can now be used to call Omnissa Identity Manager APIs. For example, with the 'Bearer' token type, use 'Bearer &lt;this access token value&gt;' as the 'Authorization' header. The access token is a <a href=\"https://jwt.io/\">JSON web token</a> (JWT)."
         },
         "token_type": {
           "type": "string",
@@ -3535,7 +3535,7 @@
         },
         "mediaType": {
           "type": "string",
-          "example": "application/vnd.vmware.horizon.manager.clientcredentialsoauth2client+json",
+          "example": "application/vnd.omnissa.horizon.manager.clientcredentialsoauth2client+json",
           "description": "Defines the media type of this OAuth 2.0 client (Client Credentials type or Classic type)"
         },
         "clientId": {
@@ -3673,12 +3673,12 @@
       "properties": {
         "userinfo_endpoint": {
           "type": "string",
-          "example": "https://acme.vmwareidentity.com/SAAS/jersey/manager/api/userinfo",
+          "example": "https://acme.omnissaidentity.com/SAAS/jersey/manager/api/userinfo",
           "description": "URL of the user info endpoint"
         },
         "jwks_uri": {
           "type": "string",
-          "example": "https://acme.vmwareidentity.com/SAAS/API/1.0/REST/auth/token?attribute=publicKey&format=jwks",
+          "example": "https://acme.omnissaidentity.com/SAAS/API/1.0/REST/auth/token?attribute=publicKey&format=jwks",
           "description": "URL of JSON Web Key Set document"
         },
         "scopes_supported": {
@@ -3686,18 +3686,18 @@
             "type": "string"
           },
           "type": "array",
-          "description": "list of the OAuth 2.0 scope values that VMware Identity Manager supports"
+          "description": "list of the OAuth 2.0 scope values that Omnissa Identity Manager supports"
         },
         "subject_types_supported": {
           "items": {
             "type": "string"
           },
           "type": "array",
-          "description": "list of the Subject Identifier types that VMware Identity Manager supports"
+          "description": "list of the Subject Identifier types that Omnissa Identity Manager supports"
         },
         "token_endpoint": {
           "type": "string",
-          "example": "https://acme.vmwareidentity.com/SAAS/auth/oauthtoken",
+          "example": "https://acme.omnissaidentity.com/SAAS/auth/oauthtoken",
           "description": "URL of the OAuth 2.0 token endpoint"
         },
         "id_token_signing_alg_values_supported": {
@@ -3712,23 +3712,23 @@
             "type": "string"
           },
           "type": "array",
-          "description": "list of the OAuth 2.0 response_type values that VMware Identity Manager supports"
+          "description": "list of the OAuth 2.0 response_type values that Omnissa Identity Manager supports"
         },
         "claims_supported": {
           "items": {
             "type": "string"
           },
           "type": "array",
-          "description": "list of the claims VMware Identity Manager may be able to supply values for. Note that for privacy or other reasons, this might not be an exhaustive list"
+          "description": "list of the claims Omnissa Identity Manager may be able to supply values for. Note that for privacy or other reasons, this might not be an exhaustive list"
         },
         "authorization_endpoint": {
           "type": "string",
-          "example": "https://acme.vmwareidentity.com/SAAS/auth/oauth2/authorize",
+          "example": "https://acme.omnissaidentity.com/SAAS/auth/oauth2/authorize",
           "description": "URL of the OAuth 2.0 authorization endpoint"
         },
         "issuer": {
           "type": "string",
-          "example": "https://acme.vmwareidentity.com/SAAS/auth",
+          "example": "https://acme.omnissaidentity.com/SAAS/auth",
           "description": "the identifier of the token's issuer. This is identical to the 'iss' Claim value in ID Tokens"
         }
       },

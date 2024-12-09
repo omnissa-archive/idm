@@ -1,4 +1,4 @@
-package com.vmware.idm.samples.oauth2;
+package com.omnissa.idm.samples.oauth2;
 
 import org.junit.Test;
 import org.springframework.boot.autoconfigure.security.oauth2.resource.PrincipalExtractor;
@@ -12,14 +12,14 @@ import static org.junit.Assert.assertNull;
 /**
  * Unit tests for our special extractor.
  */
-public class VMwarePrincipalExtractorTest {
+public class OmnissaPrincipalExtractorTest {
 
-    PrincipalExtractor principalExtractor = new VMwarePrincipalExtractor();
+    PrincipalExtractor principalExtractor = new OmnissaPrincipalExtractor();
 
     @Test
     public void testExtractPrincipal() throws Exception {
         Map map = new HashMap<>();
-        map.put(VMwarePrincipalExtractor.VMWARE_KEY_SUBJECT, "test");
+        map.put(OmnissaPrincipalExtractor.OMNISSA_KEY_SUBJECT, "test");
 
         assertEquals("test", principalExtractor.extractPrincipal(map));
     }
@@ -27,7 +27,7 @@ public class VMwarePrincipalExtractorTest {
     @Test
     public void testExtractPrincipalIfMultipleFields() throws Exception {
         Map map = new HashMap<>();
-        map.put(VMwarePrincipalExtractor.VMWARE_KEY_SUBJECT, "test");
+        map.put(OmnissaPrincipalExtractor.OMNISSA_KEY_SUBJECT, "test");
         map.put("name", "test-other");
 
         assertEquals("test", principalExtractor.extractPrincipal(map));

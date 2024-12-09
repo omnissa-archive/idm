@@ -3,13 +3,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.vmware.idm.samples</groupId>
+    <groupId>com.omnissa.idm.samples</groupId>
     <artifactId>webapp-spring-boot-oauth2-resource-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>webapp-spring-boot-oauth2-resource-server</name>
-    <description>Demo project for Spring Boot and VMware OAuth2</description>
+    <description>Demo project for Spring Boot and Omnissa OAuth2</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>

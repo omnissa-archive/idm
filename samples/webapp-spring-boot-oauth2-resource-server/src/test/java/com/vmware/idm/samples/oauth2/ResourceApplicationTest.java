@@ -1,4 +1,4 @@
-package com.vmware.idm.samples.oauth2;
+package com.omnissa.idm.samples.oauth2;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

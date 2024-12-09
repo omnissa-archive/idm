@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.vmware.idm.samples.appauth;
+package com.omnissa.idm.samples.appauth;
 
 import android.support.v7.app.AppCompatDelegate;
 

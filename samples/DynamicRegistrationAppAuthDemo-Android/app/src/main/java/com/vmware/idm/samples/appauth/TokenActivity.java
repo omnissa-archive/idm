@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.vmware.idm.samples.appauth;
+package com.omnissa.idm.samples.appauth;
 
 import android.app.PendingIntent;
 import android.content.Context;
@@ -35,7 +35,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.vmware.idm.samples.appauth.R;
+import com.omnissa.idm.samples.appauth.R;
 
 import net.openid.appauth.AuthState;
 import net.openid.appauth.AuthorizationException;
@@ -65,7 +65,7 @@ import java.text.DateFormat;
 import java.util.Date;
 
 /**
- * A sample activity to serve as a client to the Native OAuth library, using VMware Identity Manager as the IDP.
+ * A sample activity to serve as a client to the Native OAuth library, using Omnissa Identity Manager as the IDP.
  * Based on the demo app of AppAuth.
  */
 public class TokenActivity extends AppCompatActivity {
@@ -290,7 +290,7 @@ public class TokenActivity extends AppCompatActivity {
         }
 
 
-        // VMware has no discovery endpoint but has a user endpoint and a SCIM endpoint to also get user info
+        // Omnissa has no discovery endpoint but has a user endpoint and a SCIM endpoint to also get user info
         refreshViewUserInfoScim();
     }
 
@@ -355,7 +355,7 @@ public class TokenActivity extends AppCompatActivity {
                     Log.e(TAG, "Token refresh failed when fetching user info");
                     return;
                 }
-                /* VMware does not provide a discovery URL but has a userinfo endpoint nonetheless.
+                /* Omnissa does not provide a discovery URL but has a userinfo endpoint nonetheless.
                 So if we comment the following check on discovery doc and use the hard-coded endpoint,
                 this would work as well. */
 
@@ -367,7 +367,7 @@ public class TokenActivity extends AppCompatActivity {
                 URL userInfoEndpoint;
                 try {
                     /* See comment above. Using the following call would work:
-                    userInfoEndpoint = new URL(getResources().getString(R.string.vmware_userinfo_endpoint_uri));
+                    userInfoEndpoint = new URL(getResources().getString(R.string.omnissa_userinfo_endpoint_uri));
                     */
                     userInfoEndpoint = new URL(discoveryDoc.getUserinfoEndpoint().toString());
                 } catch (MalformedURLException urlEx) {
@@ -412,9 +412,9 @@ public class TokenActivity extends AppCompatActivity {
                 URL scimUserInfoEndpoint;
                 try {
                     URL baseURL = new URL(getResources()
-                            .getString(R.string.vmware_url));
+                            .getString(R.string.omnissa_url));
                     scimUserInfoEndpoint = new URL(baseURL, getResources()
-                            .getString(R.string.vmware_scim_userinfo_endpoint_uri));
+                            .getString(R.string.omnissa_scim_userinfo_endpoint_uri));
                 } catch (MalformedURLException urlEx) {
                     Log.e(TAG, "Failed to construct SCIM user info endpoint URL", urlEx);
                     return;

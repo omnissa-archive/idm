@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.vmware.idm.samples.appauth;
+package com.omnissa.idm.samples.appauth;
 
 import android.annotation.TargetApi;
 import android.net.Uri;
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                             } else {
                                 Log.d(TAG, "configuration retrieved for " + idp.name
                                         + ", proceeding");
-                                // Do VMware IDM dynamic client registration
+                                // Do Omnissa IDM dynamic client registration
                                 makeDeviceRegistrationRequest(serviceConfiguration, idp,
                                         new AuthState());
                             }

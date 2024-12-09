@@ -14,14 +14,14 @@
  * limitations under the License. 
  */
 
-package com.vmware.idm.samples.saml.controllers;
+package com.omnissa.idm.samples.saml.controllers;
 
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.vmware.idm.samples.saml.stereotypes.CurrentUser;
+import com.omnissa.idm.samples.saml.stereotypes.CurrentUser;
 
 @Controller
 public class LandingController {

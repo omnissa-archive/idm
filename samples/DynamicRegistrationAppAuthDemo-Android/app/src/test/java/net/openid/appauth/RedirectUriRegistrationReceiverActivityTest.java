@@ -29,8 +29,8 @@ import static org.mockito.Mockito.verify;
  * Testing registration redirection happens correctly on the activity.
  */
 @RunWith(RobolectricGradleTestRunner.class)
-@Config(constants = com.vmware.idm.samples.appauth.BuildConfig.class, sdk = 16, manifest = "src/main/AndroidManifest.xml")
-public class RedirectUriRegistrationReceiverActivityTest extends VMwareAppAuthTest {
+@Config(constants = com.omnissa.idm.samples.appauth.BuildConfig.class, sdk = 16, manifest = "src/main/AndroidManifest.xml")
+public class RedirectUriRegistrationReceiverActivityTest extends OmnissaAppAuthTest {
 
     private DeviceRegistrationRequest mRequest;
 

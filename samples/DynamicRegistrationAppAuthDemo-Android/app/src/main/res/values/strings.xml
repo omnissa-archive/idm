@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name_short">VMware AppAuth</string>
+    <string name="app_name_short">Omnissa AppAuth</string>
     <string name="auth_granted">Authorization granted</string>
     <string name="exchange_complete">Exchange completed successfully</string>
     <string name="refresh_failed">Token refresh failed</string>

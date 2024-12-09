@@ -17,8 +17,8 @@ import static org.junit.Assert.*;
  * Unit tests for the activation request.
  */
 @RunWith(RobolectricTestRunner.class)
-@Config(constants = com.vmware.idm.samples.appauth.BuildConfig.class, sdk = 16)
-public class DeviceActivationRequestTest extends VMwareAppAuthTest {
+@Config(constants = com.omnissa.idm.samples.appauth.BuildConfig.class, sdk = 16)
+public class DeviceActivationRequestTest extends OmnissaAppAuthTest {
 
     private static final String TEST_JSON = "{\n"
             + " \"activation_code\": \"" + TEST_ACTIVATION_CODE + "\",\n"

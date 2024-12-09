@@ -14,9 +14,9 @@
  * limitations under the License. 
  */
 
-package com.vmware.idm.samples.saml.config;
+package com.omnissa.idm.samples.saml.config;
 
-import com.vmware.idm.samples.saml.core.SAMLUserDetailsServiceImpl;
+import com.omnissa.idm.samples.saml.core.SAMLUserDetailsServiceImpl;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.MultiThreadedHttpConnectionManager;
 import org.apache.commons.httpclient.protocol.Protocol;
@@ -110,8 +110,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Value("${keystore.secret}")
     private String keystoreSecret;
 
-    @Value("${vmware.url}")
-    private URL vmwareIdmUrl;
+    @Value("${omnissa.url}")
+    private URL omnissaIdmUrl;
 
     @Autowired
     private SAMLUserDetailsServiceImpl samlUserDetailsServiceImpl;
@@ -296,13 +296,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    @Qualifier("idp-vmwareidm")
-    public ExtendedMetadataDelegate vmwareIdmExtendedMetadataProvider()
+    @Qualifier("idp-omnissaidm")
+    public ExtendedMetadataDelegate omnissaIdmExtendedMetadataProvider()
             throws MetadataProviderException, MalformedURLException {
-        String idpVMwareIdmMetadataURL = new URL(vmwareIdmUrl, "SAAS/API/1.0/GET/metadata/idp.xml").toString();
+        String idpOmnissaIdmMetadataURL = new URL(omnissaIdmUrl, "SAAS/API/1.0/GET/metadata/idp.xml").toString();
         Timer backgroundTaskTimer = new Timer(true);
         HTTPMetadataProvider httpMetadataProvider =
-                new HTTPMetadataProvider(backgroundTaskTimer, httpClient(), idpVMwareIdmMetadataURL);
+                new HTTPMetadataProvider(backgroundTaskTimer, httpClient(), idpOmnissaIdmMetadataURL);
         httpMetadataProvider.setParserPool(parserPool());
         ExtendedMetadataDelegate extendedMetadataDelegate =
                 new ExtendedMetadataDelegate(httpMetadataProvider, extendedMetadata());
@@ -318,7 +318,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Qualifier("metadata")
     public CachingMetadataManager metadata() throws MetadataProviderException, MalformedURLException {
         List<MetadataProvider> providers = new ArrayList<MetadataProvider>();
-        providers.add(vmwareIdmExtendedMetadataProvider());
+        providers.add(omnissaIdmExtendedMetadataProvider());
         return new CachingMetadataManager(providers);
     }
 
@@ -326,7 +326,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public MetadataGenerator metadataGenerator() {
         MetadataGenerator metadataGenerator = new MetadataGenerator();
-        metadataGenerator.setEntityId("com:vmware:idm:samples");
+        metadataGenerator.setEntityId("com:omnissa:idm:samples");
         metadataGenerator.setExtendedMetadata(extendedMetadata());
         metadataGenerator.setIncludeDiscoveryExtension(false);
         metadataGenerator.setKeyManager(keyManager());

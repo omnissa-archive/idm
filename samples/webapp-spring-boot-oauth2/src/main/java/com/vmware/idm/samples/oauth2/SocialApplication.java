@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.vmware.idm.samples.oauth2;
+package com.omnissa.idm.samples.oauth2;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -59,7 +59,7 @@ public class SocialApplication extends WebSecurityConfigurerAdapter {
 
     /**
      * This endpoint requires the user to be authenticated: this /user endpoint is now secured with cookies created
-     * when the user authenticates through VMware Identity Manager.
+     * when the user authenticates through Omnissa Identity Manager.
      * Spring will populate the "Principal" object with the logged-in user's information.
      */
     @RequestMapping("/user")
@@ -86,7 +86,7 @@ public class SocialApplication extends WebSecurityConfigurerAdapter {
     }
 
     /**
-     * Register the filter OAuth2ClientContextFilter that will handle the redirect to VMware Identity Manager
+     * Register the filter OAuth2ClientContextFilter that will handle the redirect to Omnissa Identity Manager
      * if the user is not authenticated.
      */
     @Bean
@@ -98,16 +98,16 @@ public class SocialApplication extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    // Defining a name allows us to use "vmware.xxx" instead of "security.oauth2.xxx" in the application.yml file
-    @ConfigurationProperties("vmware")
-    public ClientResources vmware() {
-        return new ClientResources(new VMwarePrincipalExtractor());
+    // Defining a name allows us to use "omnissa.xxx" instead of "security.oauth2.xxx" in the application.yml file
+    @ConfigurationProperties("omnissa")
+    public ClientResources omnissa() {
+        return new ClientResources(new OmnissaPrincipalExtractor());
     }
 
     private Filter ssoFilter() {
         CompositeFilter filter = new CompositeFilter();
         List<Filter> filters = new ArrayList<>();
-        filters.add(ssoFilter(vmware(), "/login/vmware"));
+        filters.add(ssoFilter(omnissa(), "/login/omnissa"));
         filter.setFilters(filters);
         return filter;
     }
@@ -155,17 +155,17 @@ class ClientResources {
     }
 }
 
-class VMwarePrincipalExtractor implements PrincipalExtractor {
+class OmnissaPrincipalExtractor implements PrincipalExtractor {
 
     /**
-     * VMware does not return any of the hard-coded keys, so use the custom 'subject' key to get some user info
+     * Omnissa does not return any of the hard-coded keys, so use the custom 'subject' key to get some user info
      */
-    public static final String VMWARE_KEY_SUBJECT = "subject";
+    public static final String OMNISSA_KEY_SUBJECT = "subject";
 
     @Override
     public Object extractPrincipal(Map<String, Object> map) {
-        if (map.containsKey(VMWARE_KEY_SUBJECT)) {
-            return map.get(VMWARE_KEY_SUBJECT);
+        if (map.containsKey(OMNISSA_KEY_SUBJECT)) {
+            return map.get(OMNISSA_KEY_SUBJECT);
         }
         return null;
     }

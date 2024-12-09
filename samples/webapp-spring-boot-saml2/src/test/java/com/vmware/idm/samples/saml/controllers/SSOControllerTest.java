@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.vmware.idm.samples.saml.controllers;
+package com.omnissa.idm.samples.saml.controllers;
 
-import com.vmware.idm.samples.saml.CommonTestSupport;
+import com.omnissa.idm.samples.saml.CommonTestSupport;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;

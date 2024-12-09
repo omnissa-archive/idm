@@ -14,7 +14,7 @@
  * limitations under the License. 
  */
 
-package com.vmware.idm.samples.saml.stereotypes;
+package com.omnissa.idm.samples.saml.stereotypes;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;

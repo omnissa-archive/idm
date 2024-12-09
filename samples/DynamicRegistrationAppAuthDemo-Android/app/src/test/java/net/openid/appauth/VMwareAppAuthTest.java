@@ -5,7 +5,7 @@ import android.net.Uri;
 /**
  * Common class to hold test values.
  */
-public class VMwareAppAuthTest {
+public class OmnissaAppAuthTest {
 
     public static final Uri TEST_IDP_TOKEN_ENDPOINT =
             Uri.parse("https://testidp.example.com/authorize");

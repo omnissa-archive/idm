@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.vmware.idm.samples.saml.core;
+package com.omnissa.idm.samples.saml.core;
 
-import com.vmware.idm.samples.saml.CommonTestSupport;
-import com.vmware.idm.samples.saml.stereotypes.CurrentUser;
+import com.omnissa.idm.samples.saml.CommonTestSupport;
+import com.omnissa.idm.samples.saml.stereotypes.CurrentUser;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

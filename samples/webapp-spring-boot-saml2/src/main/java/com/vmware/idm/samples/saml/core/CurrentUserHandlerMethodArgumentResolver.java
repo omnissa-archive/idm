@@ -14,7 +14,7 @@
  * limitations under the License. 
  */
 
-package com.vmware.idm.samples.saml.core;
+package com.omnissa.idm.samples.saml.core;
 
 import java.security.Principal;
 
@@ -28,7 +28,7 @@ import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
 
-import com.vmware.idm.samples.saml.stereotypes.CurrentUser;
+import com.omnissa.idm.samples.saml.stereotypes.CurrentUser;
 
 @Component
 public class CurrentUserHandlerMethodArgumentResolver implements

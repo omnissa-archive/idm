@@ -28,7 +28,7 @@ import static net.openid.appauth.JsonUtil.put;
 import static net.openid.appauth.Preconditions.checkNotNull;
 
 /**
- * VMware Identity Manager request to activate the device in echange of the activation code
+ * Omnissa Identity Manager request to activate the device in echange of the activation code
  * and get a unique pair of clientID and secret.
  */
 public class DeviceActivationRequest {

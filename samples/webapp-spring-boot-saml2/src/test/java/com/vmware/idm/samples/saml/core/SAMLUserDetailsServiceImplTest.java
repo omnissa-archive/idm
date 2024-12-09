@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.vmware.idm.samples.saml.core;
+package com.omnissa.idm.samples.saml.core;
 
-import com.vmware.idm.samples.saml.CommonTestSupport;
+import com.omnissa.idm.samples.saml.CommonTestSupport;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.opensaml.saml2.core.NameID;

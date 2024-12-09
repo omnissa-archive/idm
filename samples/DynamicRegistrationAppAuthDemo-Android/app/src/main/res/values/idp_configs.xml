@@ -6,15 +6,15 @@
     -->
     <eat-comment/>
 
-    <!-- Enables VMware Identity Manager configuration. -->
-    <bool name="vmware_enabled">true</bool>
+    <!-- Enables Omnissa Identity Manager configuration. -->
+    <bool name="omnissa_enabled">true</bool>
 
-    <!-- Your VMware Identity Manager organization URL. -->
-    <string name="vmware_url" translatable="false">https://dev.vmwareidentity.asia</string>
+    <!-- Your Omnissa Identity Manager organization URL. -->
+    <string name="omnissa_url" translatable="false">https://dev.omnissaidentity.asia</string>
 
     <!-- The information below must match the template information defined in the admin interface. -->
-    <string name="vmware_template" translatable="false">VMware-AppAuth-Samples-Template</string>
-    <string name="vmware_auth_redirect_scheme" translatable="false">com.vmware.idm.samples.mobilesso</string>
-    <string name="vmware_auth_redirect_uri" translatable="false">com.vmware.idm.samples.mobilesso://oauth2redirect</string>
+    <string name="omnissa_template" translatable="false">Omnissa-AppAuth-Samples-Template</string>
+    <string name="omnissa_auth_redirect_scheme" translatable="false">com.omnissa.idm.samples.mobilesso</string>
+    <string name="omnissa_auth_redirect_uri" translatable="false">com.omnissa.idm.samples.mobilesso://oauth2redirect</string>
 
 </resources>

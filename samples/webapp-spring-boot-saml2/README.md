@@ -1,20 +1,20 @@
-Log in with VMware Identity Manager
+Log in with Omnissa Identity Manager
 ===================================
 
 This demo application shows how to use Spring Boot and the Spring
-security SAML2 extensions to let a user authenticate with VMware
+security SAML2 extensions to let a user authenticate with Omnissa
 Identity Manager™, using the SAML2 protocol.
 
 This application is based on the [Spring SAML2 Demo application](https://github.com/vdenotaris/spring-boot-security-saml-sample)
-and has been modified to integrate VMware Identity Manager as an identity provider (IdP).
+and has been modified to integrate Omnissa Identity Manager as an identity provider (IdP).
 
 Building the project
 --------------------
 
 ### Prerequisites
 
--   You need a [VMware Identity Manager](http://www.air-watch.com/vmware-identity-manager-free-trial)
-    tenant, like https://dev.vmwareidentity.asia, where you have
+-   You need a [Omnissa Identity Manager](http://www.air-watch.com/omnissa-identity-manager-free-trial)
+    tenant, like https://dev.omnissaidentity.asia, where you have
     **admin** access (if you want to add your own application). You can
     test the application as is, as it is configured by default on an
     provided tenant.
@@ -26,7 +26,7 @@ Building the project
 -   Clone this project.
 
 -   Then import the root folder. You can run the main class named
-    `com.vmware.idm.samples.saml.Application`.
+    `com.omnissa.idm.samples.saml.Application`.
 
 ### Building from the Command Line
 
@@ -42,22 +42,22 @@ Another option is to build the jar file and run it with
 docs and other available documentation).
 
 You can now select the "SSO Login Page" and the first IdP and click
-`Login`. You can use `user1` as username and `vmware` as the password.
+`Login`. You can use `user1` as username and `omnissa` as the password.
 
 ### Configure the Demo Application
 
 If you want to configure the application to log in users from your own
-VMware Identity Manager organization, you need to add and configure that
+Omnissa Identity Manager organization, you need to add and configure that
 SAML2 application in your Identity Manager catalog.
 
 1.  Edit the local `./src/main/resources/application.properties`
     file to setup your organization URL:
     ```properties
-    vmware.url=https://<your VMware IDM URL>
+    omnissa.url=https://<your Omnissa IDM URL>
     ```
     and run the application: `$ ./gradlew bootRun.`
 
-2.  Login to your VMware Identity Manager organization (https://<your VMware IDM URL>)) as an
+2.  Login to your Omnissa Identity Manager organization (https://<your Omnissa IDM URL>)) as an
     administrator
 
 3.  Create a new SAML2 application, by clicking on the `Catalog` tab,
@@ -80,5 +80,5 @@ Then edit the name, description and icon of the application. Click
     application to all users in your system.
 
 You can now log in to your application from http://localhost:8080, and
-you can also launch your application from the VMware Identity Manager
+you can also launch your application from the Omnissa Identity Manager
 end user catalog.

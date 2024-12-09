@@ -12,7 +12,7 @@
  * limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.vmware.idm.samples.appauth">
+          package="com.omnissa.idm.samples.appauth">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -27,14 +27,14 @@
 
         <!-- Callback from device registration screen -->
         <activity android:name="net.openid.appauth.RedirectUriRegistrationReceiverActivity">
-            <!-- redirect URI for VMware Identity Manager -->
+            <!-- redirect URI for Omnissa Identity Manager -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
 
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
 
-                <data android:scheme="@string/vmware_auth_redirect_scheme"/>
+                <data android:scheme="@string/omnissa_auth_redirect_scheme"/>
             </intent-filter>
         </activity>
 

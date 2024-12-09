@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.vmware.idm.samples.appauth;
+package com.omnissa.idm.samples.appauth;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -42,24 +42,24 @@ class IdentityProvider {
      */
     public static final int NOT_SPECIFIED = -1;
 
-    public static final IdentityProvider VMWARE = new IdentityProvider(
-            "VMware", // name of the provider, for debug strings,
-            R.bool.vmware_enabled,
-            R.string.vmware_url,
-            R.string.vmware_activation_endpoint_uri, // activation endpoint
-            R.string.vmware_auth_endpoint_uri, // authorization endpoint
-            R.string.vmware_token_endpoint_uri, // token endpoint
-            R.string.vmware_registration_endpoint_uri,
+    public static final IdentityProvider OMNISSA = new IdentityProvider(
+            "Omnissa", // name of the provider, for debug strings,
+            R.bool.omnissa_enabled,
+            R.string.omnissa_url,
+            R.string.omnissa_activation_endpoint_uri, // activation endpoint
+            R.string.omnissa_auth_endpoint_uri, // authorization endpoint
+            R.string.omnissa_token_endpoint_uri, // token endpoint
+            R.string.omnissa_registration_endpoint_uri,
             NOT_SPECIFIED, // no client id, doing dynamic registration
-            R.string.vmware_auth_redirect_uri,
-            R.string.vmware_scope_string,
-            R.string.vmware_template, // the app product id
-            R.drawable.btn_vmware, // button image asset
-            R.string.vmware_name, // button text
+            R.string.omnissa_auth_redirect_uri,
+            R.string.omnissa_scope_string,
+            R.string.omnissa_template, // the app product id
+            R.drawable.btn_omnissa, // button image asset
+            R.string.omnissa_name, // button text
             android.R.color.black // text color on the button
     );
 
-    public static final List<IdentityProvider> PROVIDERS = Arrays.asList(VMWARE);
+    public static final List<IdentityProvider> PROVIDERS = Arrays.asList(OMNISSA);
     private static final Uri NO_BASE_URL = null;
 
     public static List<IdentityProvider> getEnabledProviders(Context context) {
@@ -143,7 +143,7 @@ class IdentityProvider {
             @ColorRes int buttonTextColorRes) {
         if (!isSpecified(baseUrlRes)) {
             throw new IllegalArgumentException(
-                    "the base VMware organization URL must be specified");
+                    "the base Omnissa organization URL must be specified");
         }
 
         this.name = name;

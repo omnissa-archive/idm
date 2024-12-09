@@ -16,8 +16,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Unit test for the @{link DeviceActivationResponse} class.
  */
 @RunWith(RobolectricTestRunner.class)
-@Config(constants = com.vmware.idm.samples.appauth.BuildConfig.class, sdk = 16)
-public class DeviceActivationResponseTest extends VMwareAppAuthTest {
+@Config(constants = com.omnissa.idm.samples.appauth.BuildConfig.class, sdk = 16)
+public class DeviceActivationResponseTest extends OmnissaAppAuthTest {
 
     private static final Object TEST_CLIENT_ID = "client_id";
     private static final Object TEST_CLIENT_SECRET = "client_secret";

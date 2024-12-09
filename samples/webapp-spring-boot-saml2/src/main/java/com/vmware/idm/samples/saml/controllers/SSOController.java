@@ -14,7 +14,7 @@
  * limitations under the License. 
  */
 
-package com.vmware.idm.samples.saml.controllers;
+package com.omnissa.idm.samples.saml.controllers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

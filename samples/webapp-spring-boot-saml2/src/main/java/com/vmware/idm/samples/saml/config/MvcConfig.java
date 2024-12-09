@@ -14,7 +14,7 @@
  * limitations under the License. 
  */
 
-package com.vmware.idm.samples.saml.config;
+package com.omnissa.idm.samples.saml.config;
 
 import java.util.List;
 
@@ -24,7 +24,7 @@ import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-import com.vmware.idm.samples.saml.core.CurrentUserHandlerMethodArgumentResolver;
+import com.omnissa.idm.samples.saml.core.CurrentUserHandlerMethodArgumentResolver;
 
 @Configuration
 public class MvcConfig extends WebMvcConfigurerAdapter {

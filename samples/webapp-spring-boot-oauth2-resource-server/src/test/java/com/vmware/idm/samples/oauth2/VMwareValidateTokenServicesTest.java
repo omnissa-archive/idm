@@ -1,4 +1,4 @@
-package com.vmware.idm.samples.oauth2;
+package com.omnissa.idm.samples.oauth2;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -34,7 +34,7 @@ import static org.mockito.Matchers.any;
  * Unit tests for our token validation class.
  */
 @RunWith(SpringRunner.class)
-public class VMwareValidateTokenServicesTest {
+public class OmnissaValidateTokenServicesTest {
 
     private static final String AN_ACCESS_TOKEN_STRING = "an-access-token";
     private static final String VALIDATE_TOKEN_URL = "https://test.test.test/SAAS/my/url/to/validate";
@@ -45,7 +45,7 @@ public class VMwareValidateTokenServicesTest {
     @MockBean
     private RestOperations mockRestTemplate;
 
-    private VMwareValidateTokenServices tokenServices;
+    private OmnissaValidateTokenServices tokenServices;
     private OAuth2AccessToken aValidAccessToken;
     private org.springframework.security.oauth2.provider.OAuth2Authentication aValidOAuth2Authentication;
     private OAuth2Request aValidOAuth2Request;
@@ -62,7 +62,7 @@ public class VMwareValidateTokenServicesTest {
 
     @Before
     public void setUp() throws URISyntaxException {
-        tokenServices = new VMwareValidateTokenServices(VALIDATE_TOKEN_URL, mockTokenStore);
+        tokenServices = new OmnissaValidateTokenServices(VALIDATE_TOKEN_URL, mockTokenStore);
         aValidAccessToken = aValidOAuth2AccessToken();
         aValidOAuth2Request = new OAuth2Request(null, null, null, false, null, new HashSet<>(Arrays.asList("test-resource-id")), null, null, null);
         aValidAuth = new UsernamePasswordAuthenticationToken("test-username", null);
@@ -83,7 +83,7 @@ public class VMwareValidateTokenServicesTest {
     public void testCreationFailsIfValidationUrlIsInvalid() throws Exception {
         thrown.expect(IllegalArgumentException.class);
         thrown.expectMessage("Can not infer expected issuer URL from validation URL");
-        new VMwareValidateTokenServices("https://an.invalid.url.without.SAAS.context", mockTokenStore);
+        new OmnissaValidateTokenServices("https://an.invalid.url.without.SAAS.context", mockTokenStore);
     }
 
     @Test
@@ -201,7 +201,7 @@ public class VMwareValidateTokenServicesTest {
 
         cal.setTime(new Date());
         // hopefully the time it takes to execute is lower than the allowed skew time
-        cal.add(Calendar.MILLISECOND, (int) (VMwareValidateTokenServices.ALLOWED_SKEW_IN_MS - 1));
+        cal.add(Calendar.MILLISECOND, (int) (OmnissaValidateTokenServices.ALLOWED_SKEW_IN_MS - 1));
         token.getAdditionalInformation().put("iat", (int) (cal.getTime().getTime() / 1000));
 
         willSuccessfullyDecodeAccessToken(token);

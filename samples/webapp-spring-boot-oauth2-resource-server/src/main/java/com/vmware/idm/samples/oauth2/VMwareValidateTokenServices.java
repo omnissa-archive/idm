@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.vmware.idm.samples.oauth2;
+package com.omnissa.idm.samples.oauth2;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.core.AuthenticationException;
@@ -32,13 +32,13 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 /**
- * Validates an Access Token issued by VMware Identity Manager and populates user's logged-in information (by reading the access token content).
+ * Validates an Access Token issued by Omnissa Identity Manager and populates user's logged-in information (by reading the access token content).
  * <p>
  * It will validate either locally or using the API on Identity Manager.
  */
-public class VMwareValidateTokenServices implements ResourceServerTokenServices {
+public class OmnissaValidateTokenServices implements ResourceServerTokenServices {
 
-    private static Logger logger = Logger.getLogger(VMwareValidateTokenServices.class.getSimpleName());
+    private static Logger logger = Logger.getLogger(OmnissaValidateTokenServices.class.getSimpleName());
 
     private static final String ISSUER_KEY = "iss";
     private static final String ISSUED_AT_KEY = "iat";
@@ -50,7 +50,7 @@ public class VMwareValidateTokenServices implements ResourceServerTokenServices 
     private JwtTokenStore tokenStore;
     private final String expectedIssuer;
 
-    public VMwareValidateTokenServices(String validateTokenUrl, JwtTokenStore tokenStore) throws URISyntaxException {
+    public OmnissaValidateTokenServices(String validateTokenUrl, JwtTokenStore tokenStore) throws URISyntaxException {
         this.validateTokenUrl = new URI(validateTokenUrl);
         this.tokenStore = tokenStore;
         this.expectedIssuer = inferExpectedIssuer(validateTokenUrl);
@@ -126,7 +126,7 @@ public class VMwareValidateTokenServices implements ResourceServerTokenServices 
     }
 
     /**
-     * Call the VMware endpoint to validate the access token.
+     * Call the Omnissa endpoint to validate the access token.
      */
     private void validateAccessToken(String accessToken) {
         HttpHeaders headers = new HttpHeaders();

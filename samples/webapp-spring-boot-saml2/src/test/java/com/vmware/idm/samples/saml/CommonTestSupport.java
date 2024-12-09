@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.vmware.idm.samples.saml;
+package com.omnissa.idm.samples.saml;
 
 import org.springframework.mock.web.MockHttpSession;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
